@@ -1,0 +1,19 @@
+.board {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+.square {
+    height: 2em;
+    width: 2em;
+}
+
+.isMine {
+    background-color: red;
+}
+
+.isClicked {
+    background-color: buttonface;
+    color: transparent;
+}
