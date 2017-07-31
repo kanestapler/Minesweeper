@@ -11,9 +11,37 @@
 
 .isMine {
     background-color: red;
+    color: transparent;
 }
 
 .isClicked {
-    background-color: buttonface;
+    background-color: #bdbdbd;
     color: transparent;
+}
+
+.emptySpace {
+    color: transparent;
+}
+
+.flagged {
+    background-color: yellow;
+    color: transparent;
+}
+
+.hidden {
+    display: none;
+}
+
+.winner {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    color: green;
+}
+
+.loser {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    color: red;
 }

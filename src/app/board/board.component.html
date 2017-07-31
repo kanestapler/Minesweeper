@@ -1,7 +1,19 @@
 <tbody class="board">
-  <tr *ngFor="let x of heightArray">
-    <td *ngFor="let y of widthArray">
-      <button class="square" (click)="squareClick(x,y)" [ngClass]="{'isMine' : board[x][y].mine, 'isClicked' : !board[x][y].clicked}">{{board[x][y].minesTouching}}</button>
-    </td>
-  </tr>
+    <tr *ngFor="let x of heightArray">
+        <td *ngFor="let y of widthArray">
+            <button class="square" (click)="squareClick(x,y)" (contextmenu)="flag(x,y)" [ngClass]="{
+                'isMine' : board[x][y].mine, 
+                'isClicked' : !board[x][y].clicked, 
+                'emptySpace' : board[x][y].minesTouching === 0,
+                'flagged' : board[x][y].flag}">
+                    {{board[x][y].minesTouching}}
+            </button>
+        </td>
+    </tr>
 </tbody>
+<div class="hidden" [ngClass]="{'winner': hasWon}">
+    <p>YOU WON!!</p>
+</div>
+<div class="hidden" [ngClass]="{'loser': hasLost}">
+    <p>YOU LOST!!</p>
+</div>
